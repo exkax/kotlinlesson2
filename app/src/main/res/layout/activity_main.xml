@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/image"
+        android:layout_width="360dp"
+        android:layout_height="390dp"
+        android:background="@drawable/img"
+        android:layout_marginTop="26dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"/>
+
+
+    <EditText
+        android:id="@+id/et_link"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:hint="    Insert link:"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/image"
+        app:layout_constraintRight_toRightOf="parent"
+        />
+
+    <Button
+        android:id="@+id/btn_add"
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:text="Add image"
+        android:background="#738FA7"
+        android:textColor="@color/white"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/btn_random"
+        app:layout_constraintTop_toBottomOf="@+id/et_link" />
+
+    <Button
+        android:id="@+id/btn_random"
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:text="Random image"
+        android:textColor="@color/white"
+        android:background="#0C4160"
+        app:layout_constraintLeft_toRightOf="@+id/btn_add"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_link" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
