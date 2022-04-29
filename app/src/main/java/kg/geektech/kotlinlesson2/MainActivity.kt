@@ -1,18 +1,12 @@
 package kg.geektech.kotlinlesson2
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.view.View
-import android.widget.ImageView
-import android.widget.Toast
-import com.bumptech.glide.Glide
 import kg.geektech.kotlinlesson2.databinding.ActivityMainBinding
 import kg.geektech.kotlinlesson2.extension.loadImage
 import kg.geektech.kotlinlesson2.extension.showToast
 import kg.geektech.kotlinlesson2.extension.validation
-import java.lang.Math.random
 import kotlin.random.Random
 
 class MainActivity : AppCompatActivity() {
@@ -45,7 +39,7 @@ class MainActivity : AppCompatActivity() {
     private fun btnAdd() {
         binding.btnAdd.setOnClickListener(View.OnClickListener {
             if (binding.etLink.text.toString().isEmpty()) {
-                showToast("Send the link first!")
+                showToast(R.string.error)
             } else {
                 validation(binding.etLink.text.toString())
                 binding.image.loadImage(binding.etLink.text.toString())
@@ -58,11 +52,9 @@ class MainActivity : AppCompatActivity() {
     private fun randomBtnSend() {
 
         binding.btnRandom.setOnClickListener(View.OnClickListener {
-//            val random = Random
-//            val index = random.nextInt(imageList.size)
-//            binding.image.loadImage(imageList[index])
+
             if (binding.etLink.text.toString().isEmpty()) {
-                showToast("Send the link first!")
+                showToast(R.string.error)
             } else {
                 val random = Random
                 val index = random.nextInt(imageList.size)
